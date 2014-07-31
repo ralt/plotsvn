@@ -8,4 +8,7 @@
   :depends-on ("cgn"
                "s-xml")
   :components ((:file "package")
+               (:file "xml-reader")
+               (:file "gnuplot")
+               (:file "plot")
                (:file "plotsvn")))
