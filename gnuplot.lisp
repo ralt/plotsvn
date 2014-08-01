@@ -1,9 +1,8 @@
 (in-package #:plotsvn)
 
-(defun plot (points)
+(defun plot (fn logentries)
   "Uses GNUPlot to plot the points."
   (cgn:start-gnuplot)
-  (cgn:plot-points (car points) (cadr points))
+  (apply fn (list logentries))
   (cgn:postscript-copy "your-plot.ps")
-  (cgn:print-graphic)
   (cgn:close-gnuplot))

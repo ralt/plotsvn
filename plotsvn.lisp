@@ -25,8 +25,8 @@
            (logentries (cdr xml))
            (plot-type (third argv)))
       (plot (cond
-              ((string= "commits-by-date" plot-type) (commits-by-date logentries))
-              (t (quit no-plot-specified "No plot specified.~%")))))))
+              ((string= "commits-by-date" plot-type) #'commits-by-date)
+              (t (quit no-plot-specified "No plot specified.~%"))) logentries))))
 
 ;; Reads the XML file and returns it as a string.
 (defun read-xml (filename)
