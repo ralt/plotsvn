@@ -18,15 +18,20 @@
 
 ;; Function ran from command-line
 (defun main (argv)
-  (let ((filename (second argv)))
+  (let ((filename (second argv))
+        (plot-type (third argv)))
     (unless filename
       (quit xml-file-required "XML file required.~%"))
-    (let* ((xml (read-xml filename))
-           (logentries (cdr xml))
-           (plot-type (third argv)))
-      (plot (cond
-              ((string= "commits-by-date" plot-type) #'commits-by-date)
-              (t (quit no-plot-specified "No plot specified.~%"))) logentries))))
+    (run-plotting filename plot-type)
+    (sb-ext:exit :code 0)))
+
+(defun run-plotting (filename plot-type)
+  (let* ((xml (read-xml filename))
+         (logentries (cdr xml)))
+    (plot (cond
+            ((string= "commits-by-date" plot-type) #'commits-by-date)
+            (t (quit no-plot-specified "No plotting specified.~%"))) logentries) logentries))
+
 
 ;; Reads the XML file and returns it as a string.
 (defun read-xml (filename)
