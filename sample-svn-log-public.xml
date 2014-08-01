@@ -30,6 +30,36 @@
 </msg>
 </logentry>
 <logentry
+   revision="779661">
+<author>bentmann</author>
+<date>2009-05-28T16:49:43.851958Z</date>
+<paths>
+<path
+   action="D">/trunk/csm_applications/components/MNG-2766</path>
+<path
+   copyfrom-path="/maven/components/MNG-2766"
+   copyfrom-rev="779659"
+   action="A">/trunk/csm_applications/bar</path>
+</paths>
+<msg>PR# CBS00039991 o swapping
+</msg>
+</logentry>
+<logentry
+   revision="779661">
+<author>bentmann</author>
+<date>2009-05-28T16:53:43.851958Z</date>
+<paths>
+<path
+   action="D">/trunk/csm_applications/components/MNG-2766</path>
+<path
+   copyfrom-path="/maven/components/MNG-2766"
+   copyfrom-rev="779659"
+   action="A">/trunk/csm_applications/bar</path>
+</paths>
+<msg>PR# CBS00039991 o swapping
+</msg>
+</logentry>
+<logentry
    revision="751452">
 <author>jvanzyl</author>
 <date>2009-03-08T16:09:53.824660Z</date>

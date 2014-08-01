@@ -6,7 +6,9 @@
   :author "Florian Margaine <florian@margaine.com>"
   :license "MIT License"
   :depends-on ("cgn"
-               "s-xml")
+               "s-xml"
+               "local-time"
+               "alexandria")
   :components ((:file "package")
                (:file "xml-reader")
                (:file "gnuplot")

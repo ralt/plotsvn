@@ -7,8 +7,6 @@
   (cgn:format-gnuplot "set nokey")
   ; Call the plotting function with a single argument
   (apply fn (list logentries))
-  ; Join the lines between plotted points
-  (cgn:format-gnuplot "plot '.cgn.dat' with linesp")
   ; Save the file to an image
   (cgn:format-gnuplot "set term png")
   (cgn:format-gnuplot "set output 'output.png'")
