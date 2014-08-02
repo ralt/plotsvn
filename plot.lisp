@@ -17,12 +17,12 @@
                                       #'(lambda (x y)
                                           (< (get-integer-date (car x)) (get-integer-date (car y))))))))
                authors)
-      (cgn:format-gnuplot (format nil "plot '~a' using 1:2 title '~a' with linesp" plot-file default-author)))))
+      (cgn:format-gnuplot (format nil "plot '~a' using 1:2 title '~a' with linespoints" plotting-file default-author)))))
 
 (defun plot-file (points)
-  (when (probe-file plot-file)
-    (delete-file plot-file))
-  (with-open-file (s plot-file :direction :output)
+  (when (probe-file plotting-file)
+    (delete-file plotting-file))
+  (with-open-file (s plotting-file :direction :output)
     (dolist (point points)
       (format s "~{~a~^~T~}~%" point))))
 
@@ -39,7 +39,7 @@
   (cgn:format-gnuplot "set grid")
   (cgn:format-gnuplot "set autoscale y")
   (cgn:format-gnuplot "set autoscale x")
-  (cgn:format-gnuplot "set xtics format '%b %d'"))
+  (cgn:format-gnuplot "set xtics format '%d/%m'"))
 
 (defun find-max-commits (authors)
   (let ((max 0))
