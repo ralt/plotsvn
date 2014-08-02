@@ -3,7 +3,7 @@
 (defun plot (fn logentries argv)
   "Uses GNUPlot to plot the points."
   (cgn:start-gnuplot)
-  (cgn:format-gnuplot "set term png")
+  (cgn:format-gnuplot "set term png size 1280,800 enhanced")
   (cgn:format-gnuplot "set output 'output.png'")
   (cgn:format-gnuplot "set xdata time")
   (cgn:format-gnuplot "set timefmt '%Y-%m-%d'")
