@@ -3,8 +3,6 @@
 (defun plot (fn logentries argv)
   "Uses GNUPlot to plot the points."
   (cgn:start-gnuplot)
-  ; Don't show the filename
-  (cgn:format-gnuplot "set nokey")
   ; Call the plotting function with a single argument
   (apply fn (list logentries (fourth argv)))
   ; Save the file to an image

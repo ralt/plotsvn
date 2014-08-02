@@ -17,14 +17,14 @@
                                       #'(lambda (x y)
                                           (< (get-integer-date (car x)) (get-integer-date (car y))))))))
                authors)
-      (cgn:format-gnuplot (format nil "plot '~a' using 1:2 with linesp" plot-file)))))
+      (cgn:format-gnuplot (format nil "plot '~a' using 1:2 title '~a' with linesp" plot-file default-author)))))
 
 (defun plot-file (points)
   (when (probe-file plot-file)
     (delete-file plot-file))
   (with-open-file (s plot-file :direction :output)
     (dolist (point points)
-      (format s "~A~T~A~%" (car point) (cadr point)))))
+      (format s "~{~a~^~T~}~%" point))))
 
 (defun build-authors (logentries authors)
   (dolist (logentry logentries)
