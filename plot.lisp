@@ -17,12 +17,12 @@
                                       #'(lambda (x y)
                                           (< (get-integer-date (car x)) (get-integer-date (car y))))))))
                authors)
-      (cgn:format-gnuplot "plot '.cgn.dat' using 1:2 with linesp"))))
+      (cgn:format-gnuplot (format nil "plot '~a' using 1:2 with linesp" plot-file)))))
 
 (defun plot-file (points)
-  (when (probe-file ".cgn.dat")
-    (delete-file ".cgn.dat"))
-  (with-open-file (s ".cgn.dat" :direction :output)
+  (when (probe-file plot-file)
+    (delete-file plot-file))
+  (with-open-file (s plot-file :direction :output)
     (dolist (point points)
       (format s "~A~T~A~%" (car point) (cadr point)))))
 

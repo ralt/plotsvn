@@ -15,6 +15,7 @@
 (defconstant xml-file-required 1)
 (defconstant no-plot-specified 2)
 (defconstant malformed-xml 3)
+(defconstant plot-file ".cgn.dat")
 
 ;; Function ran from command-line
 (defun main (argv)
