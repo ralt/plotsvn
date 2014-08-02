@@ -9,11 +9,11 @@
     (build-authors logentries authors)
     ; Sets the plot options
     (plot-options)
-    (let* ((dates (get-dates authors)))
+    (let ((dates (get-dates authors)))
       (maphash #'(lambda (author datemap)
                    (when (string= author default-author)
                      (plot-file (sort (loop for date in (reverse dates)
-                                    collect (list date (or (gethash date datemap) 0)))
+                                            collect (list date (or (gethash date datemap) 0)))
                                       #'(lambda (x y)
                                           (< (get-integer-date (car x)) (get-integer-date (car y))))))))
                authors)
