@@ -1,12 +1,16 @@
 (in-package #:plotsvn)
 
-(defun plot (fn logentries argv)
+(defun plot (fn logentries)
   "Uses GNUPlot to plot the points."
   (cgn:start-gnuplot)
-  ; Call the plotting function with a single argument
-  (apply fn (list logentries (fourth argv)))
-  ; Save the file to an image
   (cgn:format-gnuplot "set term png")
   (cgn:format-gnuplot "set output 'output.png'")
-  (cgn:format-gnuplot "replot")
+  (cgn:format-gnuplot "set xdata time")
+  (cgn:format-gnuplot "set timefmt '%Y-%m-%d'")
+  (cgn:format-gnuplot "set grid")
+  (cgn:format-gnuplot "set autoscale y")
+  (cgn:format-gnuplot "set autoscale x")
+  (cgn:format-gnuplot "set xtics format '%d/%m'")
+  ; Call the plotting function with a single argument
+  (apply fn (list logentries))
   (cgn:close-gnuplot))

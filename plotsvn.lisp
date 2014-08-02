@@ -15,7 +15,7 @@
 (defconstant xml-file-required 1)
 (defconstant no-plot-specified 2)
 (defconstant malformed-xml 3)
-(defconstant plotting-file ".cgn.dat")
+(defvar *plot-file* ".cgn.dat")
 
 ;; Function ran from command-line
 (defun main (argv)
@@ -23,17 +23,16 @@
         (plot-type (third argv)))
     (unless filename
       (quit xml-file-required "XML file required.~%"))
-    (run-plotting filename plot-type argv)
+    (run-plotting filename plot-type)
     (sb-ext:exit :code 0)))
 
-(defun run-plotting (filename plot-type argv)
+(defun run-plotting (filename plot-type)
   (let* ((xml (read-xml filename))
          (logentries (cdr xml)))
     (plot (cond
             ((string= "commits-by-date" plot-type) #'commits-by-date)
             (t (quit no-plot-specified "No plotting specified.~%")))
-          logentries
-          argv))
+          logentries))
   nil)
 
 
