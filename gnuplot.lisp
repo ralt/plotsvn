@@ -6,7 +6,7 @@
   ; Don't show the filename
   (cgn:format-gnuplot "set nokey")
   ; Call the plotting function with a single argument
-  (apply fn (list logentries (third argv)))
+  (apply fn (list logentries (fourth argv)))
   ; Save the file to an image
   (cgn:format-gnuplot "set term png")
   (cgn:format-gnuplot "set output 'output.png'")
