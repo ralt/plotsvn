@@ -1,6 +1,6 @@
 (in-package #:plotsvn)
 
-(defun commits-by-date (logentries)
+(defun commits-by-date (logentries argv)
   "Plots authors with commits by date."
   (cgn:set-title "Commits by date")
 
@@ -19,17 +19,31 @@
                    authors)
           (push authors-line lines)))
       (plot-file lines)
-      (plot-lines authors))))
 
-(defun plot-lines (authors)
+      ; We plot everything, even if a single author is requested.
+      (plot-lines authors argv))))
+
+(defun plot-lines (authors argv)
   (let ((gnuplot-lines)
-        (i 2))
+        (i 2)
+        (single-author))
+
+    ; Set the single author
+    (when (>= (length argv) 4)
+      (setf single-author (fourth argv)))
     (maphash #'(lambda (author datemap)
                  (declare (ignore datemap))
-                 (push (format nil "'~a' using 1:~d title '~a' with linespoints" *plot-file* i author) gnuplot-lines)
+                 (if single-author
+                     ; Only plot if it's current author
+                     (when (string= author single-author)
+                       (push (add-plot-line i author) gnuplot-lines))
+                     (push (add-plot-line i author) gnuplot-lines))
                  (incf i))
              authors)
     (cgn:format-gnuplot (format nil "plot ~{~a~^, ~}" (reverse gnuplot-lines)))))
+
+(defun add-plot-line (i author)
+  (format nil "'~a' using 1:~d title '~a' with linespoints" *plot-file* i author))
 
 (defun sort-dates (x y)
   (> (get-integer-date x) (get-integer-date y)))

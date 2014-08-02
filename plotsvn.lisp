@@ -23,16 +23,17 @@
         (plot-type (third argv)))
     (unless filename
       (quit xml-file-required "XML file required.~%"))
-    (run-plotting filename plot-type)
+    (run-plotting filename plot-type argv)
     (sb-ext:exit :code 0)))
 
-(defun run-plotting (filename plot-type)
+(defun run-plotting (filename plot-type argv)
   (let* ((xml (read-xml filename))
          (logentries (cdr xml)))
     (plot (cond
             ((string= "commits-by-date" plot-type) #'commits-by-date)
             (t (quit no-plot-specified "No plotting specified.~%")))
-          logentries))
+          logentries
+          argv))
   nil)
 
 
