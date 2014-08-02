@@ -4,6 +4,14 @@
 
 Makes some plots with GNUPlot from SVN logs.
 
+## Usage
+
+Right now, only a single graph is possible:
+
+```
+$ plotsvn log-file.xml commits-by-date author-name
+```
+
 ## Requirements
 
 - GNUPlot

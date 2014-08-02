@@ -1,6 +1,6 @@
 (in-package #:plotsvn)
 
-(defun commits-by-date (logentries)
+(defun commits-by-date (logentries default-author)
   "Plots authors with commits by date."
   (cgn:set-title "Commits by date")
 
@@ -20,7 +20,7 @@
       (cgn:format-gnuplot "set autoscale x")
       (cgn:format-gnuplot "set xtics format '%b %d'")
       (maphash #'(lambda (author datemap)
-                   (when (string= author "bentmann")
+                   (when (string= author default-author)
                      (progn
                        (format t "~{~a~^, ~}~%" (loop for date in dates
                                                       collect (or (gethash date datemap) 0)))
