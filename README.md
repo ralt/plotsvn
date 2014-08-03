@@ -8,9 +8,11 @@ Makes some plots with GNUPlot from SVN logs.
 
 I took the project [xmlisp](https://code.google.com/p/xmlisp) for the following graph examples.
 
-- ![commits-by-date](examples/commits-by-date.png)
-- ![commits-by-date pokermike2012](examples/commits-by-date-pokermike2012.png)
-- ![commits-total](examples/commits-total.png)
+![commits-by-date](examples/commits-by-date.png)
+
+![commits-by-date pokermike2012](examples/commits-by-date-pokermike2012.png)
+
+![commits-total](examples/commits-total.png)
 
 I had to run the following commands to generate these graphs:
 
