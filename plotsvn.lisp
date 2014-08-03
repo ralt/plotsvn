@@ -31,6 +31,7 @@
          (logentries (cdr xml)))
     (plot (cond
             ((string= "commits-by-date" plot-type) #'commits-by-date)
+            ((string= "commits-total" plot-type) #'commits-total)
             (t (quit no-plot-specified "No plotting specified.~%")))
           logentries
           argv))
