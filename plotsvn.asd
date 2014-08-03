@@ -11,6 +11,7 @@
                "alexandria")
   :components ((:file "package")
                (:file "xml-reader")
-               (:file "gnuplot")
+               (:file "commits-by-date")
                (:file "plot")
+               (:file "gnuplot")
                (:file "plotsvn")))
