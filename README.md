@@ -50,7 +50,7 @@ $ plotsvn log.xml commits-total
 
 ### Pre-built binary
 
-You can download a pre-built binary for Linux x86_64 [here](https://github.com/Ralt/plotsvn/releases/download/1.0.0/plotsvn).
+You can download a pre-built binary for Linux x86_64 [here](https://github.com/Ralt/plotsvn/releases/download/1.0.0/plotsvn-linux_x86-64).
 
 Put it somewhere in your `$PATH`, like `/usr/local/bin/`.
 
