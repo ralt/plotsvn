@@ -29,11 +29,11 @@ Makes some plots with GNUPlot from SVN logs.
 
 I took the project [xmlisp](https://code.google.com/p/xmlisp) (first lisp svn project I found on code.google.com) for the following graph examples:
 
-![commits-by-date](examples/commits-by-date.png)
+![commits-by-date](http://i.imgur.com/FkMhFD4.png)
 
-![commits-by-date pokermike2012](examples/commits-by-date-pokermike2012.png)
+![commits-by-date pokermike2012](http://i.imgur.com/bTXSjU4.png)
 
-![commits-total](examples/commits-total.png)
+![commits-total](http://i.imgur.com/Kyc1pSy.png)
 
 I had to run the following commands to generate these graphs:
 
