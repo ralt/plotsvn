@@ -1,3 +1,22 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [plotsvn](#plotsvn)
+  - [Description](#description)
+  - [Examples](#examples)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [commits-by-date](#commits-by-date)
+    - [commits-total](#commits-total)
+  - [Requirements](#requirements)
+  - [Requirements to build](#requirements-to-build)
+  - [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- doctoc: npm install -g doctoc -->
+
 # plotsvn
 
 ## Description
