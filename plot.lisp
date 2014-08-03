@@ -57,12 +57,12 @@
 
 (defun build-authors (logentries authors)
   (dolist (logentry logentries)
-    (handler-case
-        (let ((author (get-author logentry)))
-          (unless (gethash author authors)
-            (sethash authors author (make-hash-table :test 'equal)))
-          (sethash authors author (add-date (get-date logentry) (gethash author authors))))
-      (local-time::invalid-timestring () nil))))
+    (let ((author (get-author logentry)))
+      (unless (gethash author authors)
+        (sethash authors author (make-hash-table :test 'equal)))
+      (handler-case
+          (sethash authors author (add-date (get-date logentry) (gethash author authors)))
+        (local-time::invalid-timestring () (remhash author authors))))))
 
 (defun find-max-commits (authors)
   (let ((max 0))
