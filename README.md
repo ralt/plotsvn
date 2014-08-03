@@ -15,7 +15,11 @@ $ sudo make install
 
 ## Usage
 
-You first need to generate the XML log file from SVN. Typically, run this:
+```
+$ plotsvn help
+```
+
+Generally speaking, you first need to generate the XML log file from SVN. Typically, run this:
 
 ```
 $ svn log --xml > log-file.xml
