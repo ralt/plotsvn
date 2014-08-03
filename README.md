@@ -4,9 +4,29 @@
 
 Makes some plots with GNUPlot from SVN logs.
 
+## Installation
+
+See the [requirements to build](#requirements-to-build).
+
+```
+$ make
+$ sudo make install
+```
+
 ## Usage
 
-Right now, only a single graph is possible: commits by date.
+You first need to generate the XML log file from SVN. Typically, run this:
+
+```
+$ svn log --xml > log-file.xml
+```
+
+From this on, list of possible graphs:
+
+- commits by date: shows the number of commits per date, per author
+- commits total: shows the total number of commits per author
+
+### commits-by-date
 
 It shows the number of commits per day, per author.
 
@@ -18,6 +38,14 @@ You can filter to a single author by adding its name as last argument.
 
 ```
 $ plotsvn log-file.xml commits-by-date author-name
+```
+
+### commits-total
+
+It shows the total number of commits per author.
+
+```
+$ plotsvn log-file.xml commits-total
 ```
 
 ## Requirements
