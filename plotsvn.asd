@@ -13,6 +13,7 @@
                (:file "xml-reader")
                (:file "help")
                (:file "commits-by-date")
+               (:file "commits-total")
                (:file "plot")
                (:file "gnuplot")
                (:file "plotsvn")))
