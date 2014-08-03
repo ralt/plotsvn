@@ -25,7 +25,7 @@ Makes some plots with GNUPlot from SVN logs.
 
 ## Examples
 
-I took the project [xmlisp](https://code.google.com/p/xmlisp) for the following graph examples.
+I took the project [xmlisp](https://code.google.com/p/xmlisp) (first lisp svn project I found on code.google.com) for the following graph examples:
 
 ![commits-by-date](examples/commits-by-date.png)
 
