@@ -12,6 +12,7 @@
      (format t ,@body)
      (sb-ext:exit :code ,code)))
 
+(defconstant exit-success 0)
 (defconstant xml-file-required 1)
 (defconstant no-plot-specified 2)
 (defconstant malformed-xml 3)
@@ -21,6 +22,9 @@
 (defun main (argv)
   (let ((filename (second argv))
         (plot-type (third argv)))
+    (when (string= filename "help")
+      (help argv)
+      (sb-ext:exit :code 0))
     (unless filename
       (quit xml-file-required "XML file required.~%"))
     (run-plotting filename plot-type argv)
