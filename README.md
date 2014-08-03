@@ -26,6 +26,8 @@ From this on, list of possible graphs:
 - commits by date: shows the number of commits per date, per author
 - commits total: shows the total number of commits per author
 
+Each graph is generated in an `output.png` file.
+
 ### commits-by-date
 
 It shows the number of commits per day, per author.
