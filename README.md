@@ -1,11 +1,13 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
 - [plotsvn](#plotsvn)
   - [Description](#description)
   - [Examples](#examples)
   - [Installation](#installation)
+    - [Pre-built binary](#pre-built-binary)
+    - [Compile yourself](#compile-yourself)
   - [Usage](#usage)
     - [commits-by-date](#commits-by-date)
     - [commits-total](#commits-total)
@@ -45,6 +47,14 @@ $ plotsvn log.xml commits-total
 ```
 
 ## Installation
+
+### Pre-built binary
+
+You can download a pre-built binary for Linux x86_64 [here](https://github.com/Ralt/plotsvn/releases/download/1.0.0/plotsvn).
+
+### Compile yourself
+
+If the provided binary doesn't match your platform, you can build the binary yourself.
 
 See the [requirements to build](#requirements-to-build).
 
