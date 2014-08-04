@@ -1,7 +1,7 @@
 (in-package #:plotsvn)
 
-(defun commits-total (logentries argv)
-  (declare (ignore argv))
+(defun commits-total (logentries args)
+  (declare (ignore args))
   (cgn:set-title "Commits total")
 
   (let ((authors (make-hash-table :test 'equal))
@@ -27,4 +27,5 @@
   (cgn:format-gnuplot "unset key")
   (cgn:format-gnuplot "set style data histogram")
   (cgn:format-gnuplot "set style fill solid border")
+  (cgn:format-gnuplot "set xtics rotate by -45")
   (cgn:format-gnuplot "set boxwidth 0.6 relative"))

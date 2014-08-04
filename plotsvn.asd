@@ -8,6 +8,7 @@
   :depends-on ("cgn"
                "s-xml"
                "local-time"
+               "apply-argv"
                "alexandria")
   :components ((:file "package")
                (:file "xml-reader")

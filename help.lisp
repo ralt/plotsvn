@@ -1,7 +1,7 @@
 (in-package #:plotsvn)
 
-(defun help (argv)
-  (let ((graph-type (third argv)))
+(defun help (args)
+  (let ((graph-type (second (first args))))
     (if graph-type
         (cond
           ((string= "commits-by-date" graph-type) (help/commits-by-date))

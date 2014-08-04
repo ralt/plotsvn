@@ -20,25 +20,27 @@
 
 ;; Function ran from command-line
 (defun main (argv)
-  (let ((filename (second argv))
-        (plot-type (third argv)))
+  (let* ((args (apply-argv:parse-argv (cdr argv)))
+         (filename (first (first args)))
+         (plot-type (second (first args))))
     (when (string= filename "help")
-      (help argv)
+      (help args)
       (sb-ext:exit :code 0))
     (unless filename
       (quit xml-file-required "XML file required.~%"))
-    (run-plotting filename plot-type argv)
+    (run-plotting filename plot-type args)
     (sb-ext:exit :code 0)))
 
-(defun run-plotting (filename plot-type argv)
+(defun run-plotting (filename plot-type args)
   (let* ((xml (read-xml filename))
          (logentries (cdr xml)))
+    (format t "~{~a~}~%" args)
     (plot (cond
             ((string= "commits-by-date" plot-type) #'commits-by-date)
             ((string= "commits-total" plot-type) #'commits-total)
             (t (quit no-plot-specified "No plotting specified.~%")))
           logentries
-          argv))
+          args))
   nil)
 
 
